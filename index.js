@@ -5,7 +5,6 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-const AdminBroMongoose = require('admin-bro-mongoose')
 var path = require('path');
 const Home = require('./roots/Home')
 const app = express();
@@ -24,19 +23,13 @@ const Post = require('./model/Post');
 
 
 // pro //
-const AdminBro = require('admin-bro')
-const AdminBroExpress = require('admin-bro-expressjs')
-AdminBro.registerAdapter(AdminBroMongoose)
-const adminBro = new AdminBro({
-  databases: [mongoose],
-  rootPath: '/admin',
-})
+
 
 const PORT = process.env.PORT || 5000
 
 const router = AdminBroExpress.buildRouter(adminBro)
 
-app.use(adminBro.options.rootPath, router)
+
 
 mongoose.connect('mongodb+srv://moe:Aa7788000@moe-pxfnp.gcp.mongodb.net/test?retryWrites=true&w=majority'
 ,{ useUnifiedTopology: true },
