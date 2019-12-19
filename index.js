@@ -27,7 +27,7 @@ const Post = require('./model/Post');
 
 const PORT = process.env.PORT || 5000
 
-const router = AdminBroExpress.buildRouter(adminBro)
+
 
 
 
