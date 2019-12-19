@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const LocalStrategy = require('./passport-config.js');
 const AdminBroMongoose = require('admin-bro-mongoose')
 var path = require('path');
 const Home = require('./roots/Home')
