@@ -12,6 +12,11 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/',Home);
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 const Post = require('./model/Post');
 
@@ -25,7 +30,7 @@ const adminBro = new AdminBro({
   rootPath: '/admin',
 })
 
-
+const PORT = process.env.PORT || 5000
 
 const router = AdminBroExpress.buildRouter(adminBro)
 
@@ -37,13 +42,9 @@ mongoose.connect('mongodb+srv://moe:Aa7788000@moe-pxfnp.gcp.mongodb.net/test?ret
   console.log('Server is up')
 })
 
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 
-const PORT = process.env.PORT || 5000
+
+
 
 app.listen(PORT,()=>console.log(`app is up on PORT ${PORT}`));
