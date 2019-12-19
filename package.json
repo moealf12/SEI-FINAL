@@ -1,8 +1,8 @@
 {
-  "name": "index",
+  "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "script": {
+  "scripts": {
     "start": "node index.js"
   },
   "keywords": [],
