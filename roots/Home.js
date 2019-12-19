@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../model/Post')
 const nodemailer = require('nodemailer')
-const LocalStrategy = require('../passport-config.js');
-const initializePassport  = require('/Users/mohammedalfisal/desktop/mypro/passport-config.js')
 const bcrypt = require('bcrypt');
 
 
