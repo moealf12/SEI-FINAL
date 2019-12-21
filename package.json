@@ -20,7 +20,7 @@
     "passport": "^0.4.1",
     "proxy": "http://localhost:5000/",
     "passport-local": "^1.0.0",
-    "concurrently":"5.0.2,
+    "concurrently":"5.0.2"
   },
   "devDependencies": {},
   "description": ""
