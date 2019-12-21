@@ -28,7 +28,16 @@ const Post = require('./model/Post');
 const PORT = process.env.PORT || 5000
 
 
+var http = require('http');
 
+http.createServer(function(request, response){
+
+    //The following code will print out the incoming request text
+    request.pipe(response);
+
+}).listen(PORT, '127.0.0.1');
+
+console.log('Listening on port 8080...');
 
 
 mongoose.connect('mongodb+srv://moe:Aa7788000@moe-pxfnp.gcp.mongodb.net/test?retryWrites=true&w=majority'
